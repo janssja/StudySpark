@@ -1,0 +1,230 @@
+/* app/static/css/main.css */
+
+/* Base layout */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Chat container */
+.chat-container {
+    height: calc(100vh - 300px);
+    min-height: 400px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+}
+
+/* Scrollbar styling */
+.chat-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chat-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.chat-container::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+/* Chat messages */
+/* Chat messages */
+.chat-message {
+    margin-bottom: 1rem;
+}
+
+.chat-message.user {
+    text-align: right;
+}
+
+.message-content {
+    display: inline-block;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    max-width: 80%;
+}
+
+.user .message-content {
+    background-color: #000000;
+    color: white;
+    border-bottom-right-radius: 0;
+}
+
+.assistant .message-content {
+    background-color: #f3f4f6;
+    color: #1f2937;
+    border-bottom-left-radius: 0;
+}
+
+/* Header styling */
+.pxl-header {
+    background-color: #000000;
+    position: relative;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+}
+
+.pxl-logo {
+    height: 50px;
+    width: auto;
+}
+
+/* Markdown styling */
+.message-content ul, 
+.message-content ol {
+    margin: 0.5rem 0 0.5rem 1.5rem;
+    text-align: left;
+}
+
+.message-content ul li {
+    list-style-type: disc;
+    margin-bottom: 0.25rem;
+}
+
+.message-content ol li {
+    list-style-type: decimal;
+    margin-bottom: 0.25rem;
+}
+
+.message-content p {
+    margin: 0.5rem 0;
+}
+
+.message-content h1, 
+.message-content h2, 
+.message-content h3 {
+    margin: 1rem 0 0.5rem 0;
+    font-weight: bold;
+    text-align: left;
+}
+
+.message-content h1 {
+    font-size: 1.5em;
+}
+
+.message-content h2 {
+    font-size: 1.25em;
+}
+
+.message-content h3 {
+    font-size: 1.1em;
+}
+
+.message-content code {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-family: monospace;
+}
+
+.message-content pre {
+    margin: 0.5rem 0;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+}
+
+.message-content pre code {
+    display: block;
+    padding: 1em;
+    overflow-x: auto;
+    background-color: transparent;
+}
+
+/* Markdown in user messages */
+.user .message-content code {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.user .message-content pre {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Links in messages */
+.message-content a {
+    color: #FF0077;
+    text-decoration: underline;
+}
+
+.user .message-content a {
+    color: white;
+}
+
+/* Tables in markdown */
+.message-content table {
+    margin: 0.5rem 0;
+    border-collapse: collapse;
+    width: 100%;
+    text-align: left;
+}
+
+.message-content th,
+.message-content td {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+}
+
+.message-content th {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.user .message-content th {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Focus states */
+input:focus, 
+button:focus {
+    outline: none;
+    ring-color: #FF0077;
+    ring-offset-color: #FF0077;
+}
+
+/* Hover states */
+button:hover {
+    background-color: #1a1a1a;
+}
+
+/* Blockquotes */
+.message-content blockquote {
+    border-left: 3px solid #FF0077;
+    margin: 0.5rem 0;
+    padding-left: 1rem;
+    font-style: italic;
+}
+
+.user .message-content blockquote {
+    border-left-color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .container {
+        width: 95%; /* Iets breder op mobile */
+        padding: 0.5rem;
+    }
+    
+    .pxl-header {
+        padding: 0.75rem;
+    }
+    
+    .pxl-logo {
+        height: 40px;
+    }
+    
+    .message-content {
+        max-width: 90%;
+    }
+}
+
+/* Voor grote schermen een maximum breedte */
+@media (min-width: 1920px) {
+    .container {
+        max-width: 1800px;
+    }
+}

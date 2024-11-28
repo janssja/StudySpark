@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PXL StudySpark - Studiekeuzeadviseur</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.3.0/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8 w-11/12">
+        <div class="bg-white rounded-lg shadow-lg">
+            <div class="pxl-header rounded-t-lg">
+                <div class="flex justify-between items-center w-full">
+                    <div class="flex items-center gap-4">
+                        <svg class="pxl-logo" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+                            <text x="10" y="60" fill="#FFffff" font-family="Arial Black" font-size="60" font-weight="bold">PXL</text>
+                        </svg>
+                        <div class="text-white">
+                            <h1 class="text-xl font-bold">StudySpark</h1>
+                            <p class="text-sm">Je persoonlijke studiekeuzeadviseur</p>
+                        </div>
+                    </div>
+                    <button onclick="restartChat()" 
+                            class="bg-white text-black px-4 py-2 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white">
+                        Herstart gesprek
+                    </button>
+                </div>
+            </div>
+            
+            <div class="chat-container p-4" id="chatContainer">
+                <!-- Chat messages will be inserted here -->
+            </div>
+            
+            <div class="border-t p-4">
+                <div class="flex space-x-2">
+                    <input type="text" id="userInput" 
+                           class="flex-1 border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-pink-500"
+                           placeholder="Type je antwoord...">
+                    <button onclick="sendMessage()" 
+                            class="bg-black text-white px-6 py-2 rounded-lg hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-500">
+                        Verstuur
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+</body>
+</html>
