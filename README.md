@@ -20,7 +20,7 @@ Een Flask-gebaseerde applicatie voor het beheren en analyseren van vectordata. D
 
 1. Clone deze repository:
 ```bash
-git clone [repository-url]
+git clone https://github.com/janssja/StudySpark.git
 cd StudySpark
 ```
 
@@ -105,11 +105,3 @@ De applicatie biedt verschillende API endpoints:
 3. Commit je wijzigingen (`git commit -am 'Voeg nieuwe feature toe'`)
 4. Push naar de branch (`git push origin feature/nieuwe-feature`)
 5. Maak een Pull Request aan
-
-## License
-
-[Voeg hier je gewenste licentie toe]
-
-## Contact
-
-[Voeg hier contactgegevens toe indien gewenst]
